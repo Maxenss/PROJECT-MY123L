@@ -88,7 +88,6 @@ public class LoginActivity extends AppCompatActivity {
         if (mSettings.contains(APP_PREFERENCES_LOGIN) && mSettings.contains(APP_PREFERENCES_PASSWORD)) {
             _loginText.setText(mSettings.getString(APP_PREFERENCES_LOGIN, ""));
             _passwordText.setText(mSettings.getString(APP_PREFERENCES_PASSWORD, ""));
-            login();
         }
     }
 
