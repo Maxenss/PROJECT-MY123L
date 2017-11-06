@@ -1,6 +1,8 @@
 package com.leonis.leonisandrod;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,7 +10,9 @@ import android.util.Log;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,13 @@ import butterknife.InjectView;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
+
+    // имена переменных для сохранения пароля
+    public static final String APP_PREFERENCES = "loginsettings";
+    public static final String APP_PREFERENCES_LOGIN = "login";
+    public static final String APP_PREFERENCES_PASSWORD = "password";
+
+    SharedPreferences mSettings;
 
     @InjectView(R.id.input_login)
     EditText _loginText;
@@ -30,6 +41,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @InjectView(R.id.link_smsSignIn)
     TextView _signupLink;
+
+    @InjectView(R.id.passwordRadioButton)
+    RadioButton _passwordSave;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,10 +64,31 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-    //            Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-             //   startActivityForResult(intent, REQUEST_SIGNUP);
+                //            Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                //   startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
+
+        _passwordSave.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
+
+        _passwordSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _passwordSave.setChecked(!(_passwordSave.isChecked()));
+            }
+        });
+
+
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        if (mSettings.contains(APP_PREFERENCES_LOGIN) && mSettings.contains(APP_PREFERENCES_PASSWORD)) {
+            _loginText.setText(mSettings.getString(APP_PREFERENCES_LOGIN, ""));
+            _passwordText.setText(mSettings.getString(APP_PREFERENCES_PASSWORD, ""));
+        }
     }
 
     public void login() {
@@ -83,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
                         onLoginSuccess();
-                       //  onLoginFailed();
+                        //  onLoginFailed();
                         progressDialog.dismiss();
 
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -111,6 +146,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
+        if (_passwordSave.isChecked()) {
+            //login and password save
+            String sharedLogin = _loginText.getText().toString();
+            String sharedPassword = _passwordText.getText().toString();
+            SharedPreferences.Editor editor = mSettings.edit();
+            editor.putString(APP_PREFERENCES_LOGIN, sharedLogin);
+            editor.putString(APP_PREFERENCES_PASSWORD, sharedPassword);
+            editor.apply();
+        }
+
         _loginButton.setEnabled(true);
     }
 
