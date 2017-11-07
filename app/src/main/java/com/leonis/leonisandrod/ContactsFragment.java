@@ -62,16 +62,6 @@ public class ContactsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Contact contact1 = new Contact("Vasiliy");
-        Contact contact2 = new Contact("Alex");
-        Contact contact3 = new Contact("John");
-
-        contacts.add(contact1);
-        contacts.add(contact2);
-        contacts.add(contact3);
-        listView = (ListView) getView().findViewById(R.id.listView);
-        contactAdapter = new ContactAdapter(getActivity(), contacts);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -82,7 +72,20 @@ public class ContactsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contacts, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
+        listView = (ListView) rootView.findViewById(R.id.listView);
+
+        Contact contact1 = new Contact("Vasiliy");
+        Contact contact2 = new Contact("Alex");
+        Contact contact3 = new Contact("John");
+
+        contacts.add(contact1);
+        contacts.add(contact2);
+        contacts.add(contact3);
+        contactAdapter = new ContactAdapter(getActivity(), contacts);
+
+        listView.setAdapter(contactAdapter);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
