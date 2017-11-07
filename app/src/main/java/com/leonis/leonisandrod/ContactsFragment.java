@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -18,6 +22,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ContactsFragment extends Fragment {
+    ArrayList<Contact> contacts = new ArrayList<>();
+    ListView listView = null;
+    ContactAdapter contactAdapter = null;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -54,6 +61,17 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Contact contact1 = new Contact("Vasiliy");
+        Contact contact2 = new Contact("Alex");
+        Contact contact3 = new Contact("John");
+
+        contacts.add(contact1);
+        contacts.add(contact2);
+        contacts.add(contact3);
+        listView = (ListView) getView().findViewById(R.id.listView);
+        contactAdapter = new ContactAdapter(getActivity(), contacts);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
