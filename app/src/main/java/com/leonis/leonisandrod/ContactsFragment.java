@@ -11,6 +11,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -37,6 +40,16 @@ public class ContactsFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public ContactsFragment() {
+
+        Contact contact1 = new Contact("Vasiliy");
+        Contact contact2 = new Contact("Alex");
+        Contact contact3 = new Contact("John");
+
+        contacts.add(contact1);
+        contacts.add(contact2);
+        contacts.add(contact3);
+
+        Log.v(TAG, "constructor ContactList" );
         // Required empty public constructor
     }
 
@@ -62,6 +75,9 @@ public class ContactsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+        Log.v(TAG, "onCreate ContactList" );
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -74,16 +90,7 @@ public class ContactsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
         listView = (ListView) rootView.findViewById(R.id.listView);
-
-        Contact contact1 = new Contact("Vasiliy");
-        Contact contact2 = new Contact("Alex");
-        Contact contact3 = new Contact("John");
-
-        contacts.add(contact1);
-        contacts.add(contact2);
-        contacts.add(contact3);
         contactAdapter = new ContactAdapter(getActivity(), contacts);
-
         listView.setAdapter(contactAdapter);
         return rootView;
     }
