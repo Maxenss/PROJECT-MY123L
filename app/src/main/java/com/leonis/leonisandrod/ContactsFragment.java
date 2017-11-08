@@ -49,7 +49,6 @@ public class ContactsFragment extends Fragment {
         contacts.add(contact2);
         contacts.add(contact3);
 
-        Log.v(TAG, "constructor ContactList" );
         // Required empty public constructor
     }
 
