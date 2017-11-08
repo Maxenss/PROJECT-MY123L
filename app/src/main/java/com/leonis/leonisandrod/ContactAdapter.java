@@ -31,10 +31,12 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
+        TextView tvNumber = (TextView) convertView.findViewById(R.id.tvNumber);
         //TextView tvAdapt = (TextView) convertView.findViewById(R.id.tvAdaptive);
 
         assert contact != null;
         tvName.setText(contact.getName());
+        tvNumber.setText(contact.getPhone_number());
         return convertView;
     }
 }
