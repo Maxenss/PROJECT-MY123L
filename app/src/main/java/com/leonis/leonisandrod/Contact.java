@@ -1,5 +1,7 @@
 package com.leonis.leonisandrod;
 
+import java.util.Comparator;
+
 /**
  * Created by Floglor on 07.11.2017.
  */
@@ -9,7 +11,22 @@ public class Contact {
     private String phone_number;
     private String picture;
 
-    public Contact(String name) { //for ListView testing
+    public Contact(String name, String phone_number) {
+        this.name = name;
+        this.phone_number = phone_number;
+    }
+
+    static Comparator<Contact> sortByName = new Comparator<Contact>() {
+        @Override
+        public int compare(Contact o1, Contact o2) {
+            String driverName1 = o1.getName().toUpperCase();
+            String driverName2 = o2.getName().toUpperCase();
+
+            return driverName1.compareTo(driverName2);
+        }
+    };
+
+    Contact(String name) { //for ListView testing
         this.name = name;
     }
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import android.util.Log;
 
@@ -89,6 +90,7 @@ public class ContactsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
         listView = (ListView) rootView.findViewById(R.id.listView);
+        Collections.sort(contacts, Contact.sortByName);
         contactAdapter = new ContactAdapter(getActivity(), contacts);
         listView.setAdapter(contactAdapter);
         return rootView;
