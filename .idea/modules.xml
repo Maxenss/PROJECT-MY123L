@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://D:\AndroidProjects\PROJECT-MY123L\LeonisAndrod.iml" filepath="D:\AndroidProjects\PROJECT-MY123L\LeonisAndrod.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PROJECT-MY123L.iml" filepath="$PROJECT_DIR$/.idea/PROJECT-MY123L.iml" />
-      <module fileurl="file://D:\AndroidProjects\PROJECT-MY123L\PROJECT-MY123L.iml" filepath="D:\AndroidProjects\PROJECT-MY123L\PROJECT-MY123L.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\AndroidProjects\PROJECT-MY123L\app\app.iml" filepath="D:\AndroidProjects\PROJECT-MY123L\app\app.iml" />
     </modules>
   </component>
 </project>
