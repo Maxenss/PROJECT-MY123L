@@ -21,13 +21,10 @@
         android:id="@+id/textViewName"
         android:layout_width="75dp"
         android:layout_height="18dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:text="For Name"
-        app:layout_constraintEnd_toEndOf="@+id/textViewTime"
-        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toEndOf="@+id/imageViewPhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,12 +40,9 @@
 
     <ImageView
         android:id="@+id/imageViewCallStatus"
-        android:layout_width="13dp"
-        android:layout_height="10dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/textViewTime"
+        android:layout_width="24dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toEndOf="@+id/textViewNumber"
         app:layout_constraintTop_toBottomOf="@+id/textViewName"
         app:srcCompat="@mipmap/ic_launcher_round" />
@@ -56,11 +50,11 @@
     <TextView
         android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:text="For time"
-        app:layout_constraintStart_toEndOf="@+id/textViewNumber"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCallStatus"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
 </android.support.constraint.ConstraintLayout>

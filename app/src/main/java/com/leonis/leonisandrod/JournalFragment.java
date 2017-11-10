@@ -38,13 +38,21 @@ public class JournalFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public JournalFragment() {
-        Contact john = new Contact("John", "112134");
-        Contact bob = new Contact("Bob", "1112354");
-        Call call1 = new Call(john, "0 minutes", Call.MISSED_CALL, "12.04");
-        Call call2 = new Call(bob, "53 minutes", Call.RECEIVED_CALL, "12.05:");
+        Contact john = new Contact("John", "+38 (093) 631-06-19");
+        Contact bob = new Contact("Bob", "+38 (096) 105-45-87");
+        Contact keks = new Contact("Keks", "+38 (093) 102-46-55");
+        Contact keks2 = new Contact("Keks2", "+38 (095) 768-55-55");
+
+        Call call1 = new MissedCall(john, 3);
+        Call call2 = new ReceivedCall(bob, 25);
+        Call call3 = new OutgoingCall(keks, 6);
+        Call call4 = new MissedOutgoingCall(keks2, 1);
+
 
         calls.add(call1);
         calls.add(call2);
+        calls.add(call3);
+        calls.add(call4);
 
     }
 
