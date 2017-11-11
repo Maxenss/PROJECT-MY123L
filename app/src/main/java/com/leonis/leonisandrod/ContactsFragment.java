@@ -7,6 +7,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import android.util.Log;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -18,6 +26,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ContactsFragment extends Fragment {
+    ArrayList<Contact> contacts = new ArrayList<>();
+    ListView listView = null;
+    ContactAdapter contactAdapter = null;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,6 +41,15 @@ public class ContactsFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public ContactsFragment() {
+
+        Contact contact1 = new Contact("Vasiliy");
+        Contact contact2 = new Contact("Alex");
+        Contact contact3 = new Contact("John");
+
+        contacts.add(contact1);
+        contacts.add(contact2);
+        contacts.add(contact3);
+
         // Required empty public constructor
     }
 
@@ -54,6 +74,10 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Log.v(TAG, "onCreate ContactList" );
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -64,7 +88,12 @@ public class ContactsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contacts, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
+        listView = (ListView) rootView.findViewById(R.id.listView);
+        Collections.sort(contacts, Contact.sortByName);
+        contactAdapter = new ContactAdapter(getActivity(), contacts);
+        listView.setAdapter(contactAdapter);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

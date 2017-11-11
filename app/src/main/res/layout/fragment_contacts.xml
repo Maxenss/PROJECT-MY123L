@@ -5,9 +5,10 @@
     tools:context="com.leonis.leonisandrod.ContactsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Контакты Фрагмент" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

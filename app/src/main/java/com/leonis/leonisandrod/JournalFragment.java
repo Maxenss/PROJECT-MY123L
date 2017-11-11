@@ -4,9 +4,13 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,6 +27,10 @@ public class JournalFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    ArrayList<Call> calls = new ArrayList<>();
+    ListView listView = null;
+    CallAdapter callAdapter = null;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -30,7 +38,22 @@ public class JournalFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public JournalFragment() {
-        // Required empty public constructor
+        Contact john = new Contact("John", "+38 (093) 631-06-19");
+        Contact bob = new Contact("Bob", "+38 (096) 105-45-87");
+        Contact keks = new Contact("Keks", "+38 (093) 102-46-55");
+        Contact keks2 = new Contact("Keks2", "+38 (095) 768-55-55");
+
+        Call call1 = new MissedCall(john, 3);
+        Call call2 = new ReceivedCall(bob, 25);
+        Call call3 = new OutgoingCall(keks, 6);
+        Call call4 = new MissedOutgoingCall(keks2, 1);
+
+
+        calls.add(call1);
+        calls.add(call2);
+        calls.add(call3);
+        calls.add(call4);
+
     }
 
     /**
@@ -63,8 +86,19 @@ public class JournalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_journal, container, false);
+        listView = (ListView) rootView.findViewById(R.id.listViewJournal);
+        if (calls.isEmpty()) {
+            Log.v("calls", "calls is empty");
+        }
+        else {
+            Log.v("calls", "calls is not empty");
+        }
+        callAdapter = new CallAdapter(getActivity(), calls);
+        listView.setAdapter(callAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_journal, container, false);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
