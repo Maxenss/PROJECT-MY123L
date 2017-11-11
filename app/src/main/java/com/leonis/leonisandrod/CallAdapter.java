@@ -33,13 +33,13 @@ public class CallAdapter extends ArrayAdapter<Call> {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewCallStatus);
 
         if(call instanceof ReceivedCall) {
-            imageView.setImageResource(R.drawable.ic_action_call_success_received);
+            imageView.setImageResource(R.drawable.ic_call_success_received);
         } else if (call instanceof OutgoingCall) {
-            imageView.setImageResource(R.drawable.ic_action_call_success_outgoing);
+            imageView.setImageResource(R.drawable.ic_call_success_outgoing);
         } else if (call instanceof MissedCall) {
-            imageView.setImageResource(R.drawable.ic_action_call_missed);
+            imageView.setImageResource(R.drawable.ic_call_missed);
         } else if (call instanceof MissedOutgoingCall) {
-            imageView.setImageResource(R.drawable.ic_action_call_missed_outgoing);
+            imageView.setImageResource(R.drawable.ic_call_missed_outgoing);
         }
 
         if (call instanceof ReceivedCall) {
