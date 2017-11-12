@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.leonis.leonisandrod.CallPackage.Call;
-import com.leonis.leonisandrod.CallPackage.CallAdapter;
-import com.leonis.leonisandrod.CallPackage.MissedCall;
-import com.leonis.leonisandrod.CallPackage.MissedOutgoingCall;
-import com.leonis.leonisandrod.CallPackage.OutgoingCall;
-import com.leonis.leonisandrod.CallPackage.ReceivedCall;
+import com.leonis.leonisandrod.callpackage.Call;
+import com.leonis.leonisandrod.callpackage.CallAdapter;
+import com.leonis.leonisandrod.callpackage.MissedCall;
+import com.leonis.leonisandrod.callpackage.MissedOutgoingCall;
+import com.leonis.leonisandrod.callpackage.OutgoingCall;
+import com.leonis.leonisandrod.callpackage.ReceivedCall;
 import com.leonis.leonisandrod.ContactPackage.Contact;
 
 import java.util.ArrayList;

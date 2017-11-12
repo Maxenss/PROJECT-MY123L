@@ -23,8 +23,8 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:label="@string/title_activity_main"></activity>
-        <activity android:name=".CallPackage.PhoneCall" />
+            android:label="@string/title_activity_main" />
+        <activity android:name=".callpackage.PhoneCall" />
     </application>
 
 </manifest>
