@@ -1,4 +1,6 @@
-package com.leonis.leonisandrod;
+package com.leonis.leonisandrod.CallPackage;
+
+import com.leonis.leonisandrod.ContactPackage.Contact;
 
 import java.util.Comparator;
 

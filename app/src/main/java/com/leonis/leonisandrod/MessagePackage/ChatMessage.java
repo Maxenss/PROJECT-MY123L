@@ -1,4 +1,4 @@
-package com.leonis.leonisandrod;
+package com.leonis.leonisandrod.MessagePackage;
 
 /**
  * Created by user on 09.11.2017.
@@ -9,7 +9,9 @@ public class ChatMessage {
     private String messageText;
     private String messageUser;
     private long messageTime;
+    private int userID;
 
+    //for testing
     public ChatMessage(String messageText, String messageUser) {
         this.messageText = messageText;
         this.messageUser = messageUser;
@@ -17,6 +19,26 @@ public class ChatMessage {
     }
 
     public ChatMessage() {
+    }
+
+    public ChatMessage(String messageText, String messageUser, long messageTime) {
+        this.messageText = messageText;
+        this.messageUser = messageUser;
+        this.messageTime = messageTime;
+    }
+
+    public ChatMessage(String messageText, long messageTime, int userID) {
+        this.messageText = messageText;
+        this.messageTime = messageTime;
+        this.userID = userID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getMessageText() {
