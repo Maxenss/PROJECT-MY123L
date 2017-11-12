@@ -15,11 +15,6 @@
         android:layout_weight="1"
         android:padding="10dp">
 
-        <Button
-            android:id="@+id/buttonBATOn"
-            android:layout_width="362dp"
-            android:layout_height="418dp"
-            android:text="BATOn" />
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView

@@ -62,15 +62,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        baton = (Button) findViewById(R.id.buttonBATOn);
 
-        baton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PhoneCall.class);
-                startActivity(intent);
-            }
-        });
+       // baton.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View v) {
+       //         Intent intent = new Intent(getApplicationContext(), PhoneCall.class);
+       //         startActivity(intent);
+       //     }
+       // });
 
         BottomNavigationView bottomNavigationDrawer = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigationDrawer.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
