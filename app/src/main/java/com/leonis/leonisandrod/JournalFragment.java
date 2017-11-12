@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.leonis.leonisandrod.callpackage.Call;
-import com.leonis.leonisandrod.callpackage.CallAdapter;
-import com.leonis.leonisandrod.callpackage.MissedCall;
-import com.leonis.leonisandrod.callpackage.MissedOutgoingCall;
-import com.leonis.leonisandrod.callpackage.OutgoingCall;
-import com.leonis.leonisandrod.callpackage.ReceivedCall;
+import com.leonis.leonisandrod.CallPackage.Call;
+import com.leonis.leonisandrod.CallPackage.CallAdapter;
+import com.leonis.leonisandrod.CallPackage.MissedCall;
+import com.leonis.leonisandrod.CallPackage.MissedOutgoingCall;
+import com.leonis.leonisandrod.CallPackage.OutgoingCall;
+import com.leonis.leonisandrod.CallPackage.ReceivedCall;
 import com.leonis.leonisandrod.ContactPackage.Contact;
 
 import java.util.ArrayList;
@@ -48,8 +48,8 @@ public class JournalFragment extends Fragment {
     public JournalFragment() {
         Contact john = new Contact("John", "+38 (093) 631-06-19");
         Contact bob = new Contact("Bob", "+38 (096) 105-45-87");
-        Contact keks = new Contact("Keks", "+38 (093) 102-46-55");
-        Contact keks2 = new Contact("Keks2", "+38 (095) 768-55-55");
+        Contact keks = new Contact("Andrew", "+38 (093) 102-46-55");
+        Contact keks2 = new Contact("Alice", "+38 (095) 768-55-55");
 
         Call call1 = new MissedCall(john, 3);
         Call call2 = new ReceivedCall(bob, 25);

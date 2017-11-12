@@ -1,4 +1,4 @@
-package com.leonis.leonisandrod.callpackage;
+package com.leonis.leonisandrod;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
