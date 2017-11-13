@@ -1,4 +1,4 @@
-package com.leonis.leonisandrod;
+package com.leonis.leonisandrod.CallPackage;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.leonis.leonisandrod.R;
+import com.leonis.leonisandrod.TimeWorker;
 
 import java.util.List;
 

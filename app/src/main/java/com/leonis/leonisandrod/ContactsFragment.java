@@ -11,8 +11,11 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+
 import android.util.Log;
+
+import com.leonis.leonisandrod.ContactPackage.Contact;
+import com.leonis.leonisandrod.ContactPackage.ContactAdapter;
 
 import static android.content.ContentValues.TAG;
 

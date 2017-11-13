@@ -1,11 +1,12 @@
 package com.leonis.leonisandrod;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.leonis.leonisandrod.R;
 
 /**
  * Created by Floglor on 10.11.2017.

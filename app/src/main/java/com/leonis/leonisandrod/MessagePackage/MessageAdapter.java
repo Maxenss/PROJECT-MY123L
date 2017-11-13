@@ -1,4 +1,4 @@
-package com.leonis.leonisandrod;
+package com.leonis.leonisandrod.MessagePackage;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.leonis.leonisandrod.R;
+
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -17,7 +19,7 @@ import java.util.List;
  * Created by user on 09.11.2017.
  */
 
-class MessageAdapter extends ArrayAdapter<ChatMessage> {
+public class MessageAdapter extends ArrayAdapter<ChatMessage> {
     public MessageAdapter(@NonNull Context context, @NonNull List<ChatMessage> objects) {
         super(context, 0, objects);
     }

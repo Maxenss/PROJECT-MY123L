@@ -4,9 +4,17 @@ import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.leonis.leonisandrod.CallPackage.CallAdapter;
+import com.leonis.leonisandrod.MessagePackage.ChatMessage;
+import com.leonis.leonisandrod.MessagePackage.MessageAdapter;
+
+import java.util.ArrayList;
 
 
 /**
@@ -27,10 +35,19 @@ public class MessagesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    ArrayList<ChatMessage> messageArray = new ArrayList<>();
+
     private OnFragmentInteractionListener mListener;
 
     public MessagesFragment() {
         // Required empty public constructor
+        ChatMessage chat = new ChatMessage("Hello!", "Andrew");
+        ChatMessage chat1 = new ChatMessage("Hi!", "You");
+        ChatMessage chat2 = new ChatMessage("Hello James, today I went to the mountains and found a spring! They said that the water was the purest there and you should try stopping by when you can.", "Andrew");
+
+        messageArray.add(chat);
+        messageArray.add(chat1);
+        messageArray.add(chat2);
     }
 
     /**
@@ -63,8 +80,12 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
+        ListView listOfMessage = (ListView) rootView.findViewById(R.id.list_of_message);
+        MessageAdapter messageAdapter = new MessageAdapter(getActivity(), messageArray);
+        listOfMessage.setAdapter(messageAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_messages, container, false);
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -90,6 +111,7 @@ public class MessagesFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
     /**
      * This interface must be implemented by activities that contain this

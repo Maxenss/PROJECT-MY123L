@@ -1,4 +1,4 @@
-package com.leonis.leonisandrod;
+package com.leonis.leonisandrod.ContactPackage;
 
 import java.util.Comparator;
 
@@ -16,7 +16,12 @@ public class Contact {
         this.phone_number = phone_number;
     }
 
-    static Comparator<Contact> sortByName = new Comparator<Contact>() {
+    public Contact(String name) { //for ListView testing
+        this.name = name;
+    }
+
+
+    public static Comparator<Contact> sortByName = new Comparator<Contact>() {
         @Override
         public int compare(Contact o1, Contact o2) {
             String driverName1 = o1.getName().toUpperCase();
@@ -25,10 +30,6 @@ public class Contact {
             return driverName1.compareTo(driverName2);
         }
     };
-
-    Contact(String name) { //for ListView testing
-        this.name = name;
-    }
 
     public String getName() {
         return name;
