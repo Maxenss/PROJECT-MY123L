@@ -22,7 +22,7 @@
         android:layout_marginTop="35sp"
         android:background="@drawable/rounded_corners"
         android:onClick="enterNumber"
-        android:text="Continue"
+        android:text="Add"
         android:textColor="@android:color/white" />
 
 
