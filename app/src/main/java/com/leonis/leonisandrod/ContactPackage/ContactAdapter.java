@@ -37,7 +37,7 @@ public class ContactAdapter extends ArrayAdapter<Contact> {
         //TextView tvAdapt = (TextView) convertView.findViewById(R.id.tvAdaptive);
 
         assert contact != null;
-        tvName.setText(contact.getName());
+        tvName.setText(contact.getFirstname());
         tvNumber.setText(contact.getPhone_number());
         return convertView;
     }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#171838</color>
-    <color name="primary_dark">#3e596f</color>
-    <color name="primary_darker">#2B3D4C </color>
-    <color name="accent">#FFFFFF</color>
+    <color firstname="primary">#171838</color>
+    <color firstname="primary_dark">#3e596f</color>
+    <color firstname="primary_darker">#2B3D4C </color>
+    <color firstname="accent">#FFFFFF</color>
 
-    <color name="black">#000000</color>
-    <color name="jet">#222222</color>
-    <color name="oil">#333333</color>
-    <color name="monsoon">#777777</color>
-    <color name="jumbo">#888888</color>
-    <color name="aluminum">#999999</color>
-    <color name="base">#aaaaaa</color>
-    <color name="iron">#CCCCCC</color>
-    <color name="white">#FFFFFF</color>
+    <color firstname="black">#000000</color>
+    <color firstname="jet">#222222</color>
+    <color firstname="oil">#333333</color>
+    <color firstname="monsoon">#777777</color>
+    <color firstname="jumbo">#888888</color>
+    <color firstname="aluminum">#999999</color>
+    <color firstname="base">#aaaaaa</color>
+    <color firstname="iron">#CCCCCC</color>
+    <color firstname="white">#FFFFFF</color>
 </resources>

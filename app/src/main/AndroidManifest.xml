@@ -11,8 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Dark">
+
+        <activity android:label="@string/app_name"
+            android:name=".SignupActivity"
+            android:screenOrientation="portrait"
+            />
+
         <activity android:name=".LoginActivity"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +31,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:label="@string/title_activity_main" />
-        <activity android:name=".PhoneCall" />
+        <activity android:name=".callpackage.PhoneCall" />
     </application>
 
 </manifest>

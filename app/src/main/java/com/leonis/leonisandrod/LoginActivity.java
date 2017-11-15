@@ -42,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
     @InjectView(R.id.link_smsSignIn)
     TextView _signupLink;
 
+    @InjectView(R.id.btn_signup)
+    Button SignUp;
+
     @InjectView(R.id.passwordRadioButton)
     RadioButton _passwordSave;
 
@@ -56,6 +59,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
+            }
+        });
+
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent( getApplicationContext(), SignupActivity.class);
+                startActivity(myIntent);
             }
         });
 

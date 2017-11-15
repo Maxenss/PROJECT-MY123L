@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Leonis CRM</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_journal">Журнал</string>
-    <string name="title_contacts">Контакты</string>
-    <string name="title_messages">Сообщения</string>
-    <string name="call_dialing">Вызов</string>
-    <string name="enter_phone_number">Enter phone number</string>
+    <string firstname="app_name">Leonis CRM</string>
+    <string firstname="title_activity_main">MainActivity</string>
+    <string firstname="title_journal">Журнал</string>
+    <string firstname="title_contacts">Контакты</string>
+    <string firstname="title_messages">Сообщения</string>
+    <string firstname="call_dialing">Вызов</string>
+    <string firstname="enter_phone_number">Enter phone number</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string firstname="hello_blank_fragment">Hello blank fragment</string>
 </resources>

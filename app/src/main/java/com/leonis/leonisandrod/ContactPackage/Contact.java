@@ -6,37 +6,37 @@ import java.util.Comparator;
  * Created by Floglor on 07.11.2017.
  */
 
-public class Contact {
-    private String name;
+public abstract class Contact {
+    private String firstname;
     private String phone_number;
     private String picture;
 
-    public Contact(String name, String phone_number) {
-        this.name = name;
+    public Contact(String firstname, String phone_number) {
+        this.firstname = firstname;
         this.phone_number = phone_number;
     }
 
-    public Contact(String name) { //for ListView testing
-        this.name = name;
+    public Contact(String firstname) { //for ListView testing
+        this.firstname = firstname;
     }
 
 
     public static Comparator<Contact> sortByName = new Comparator<Contact>() {
         @Override
         public int compare(Contact o1, Contact o2) {
-            String driverName1 = o1.getName().toUpperCase();
-            String driverName2 = o2.getName().toUpperCase();
+            String driverName1 = o1.getFirstname().toUpperCase();
+            String driverName2 = o2.getFirstname().toUpperCase();
 
             return driverName1.compareTo(driverName2);
         }
     };
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getPhone_number() {

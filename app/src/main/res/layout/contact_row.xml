@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
-        android:text="For name"
+        android:text="For firstname"
         android:textColor="@android:color/darker_gray"
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/avatarId"

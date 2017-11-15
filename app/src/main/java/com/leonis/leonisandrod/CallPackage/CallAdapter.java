@@ -56,7 +56,7 @@ public class CallAdapter extends ArrayAdapter<Call> {
         String duration;
         assert call != null;
 
-        tvName.setText(call.getCaller().getName());
+        tvName.setText(call.getCaller().getFirstname());
         tvNumber.setText(call.getCaller().getPhone_number());
         tvTime.setText(TimeWorker.getTimeAgo(call.getTime()));
         return convertView;
