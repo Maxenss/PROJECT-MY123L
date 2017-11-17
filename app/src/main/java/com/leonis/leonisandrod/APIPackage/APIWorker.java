@@ -76,7 +76,6 @@ public class APIWorker {
 
     // Метод для добавления контакта на сервер
     public static FullContact createContact(FullContact contact) throws IOException{
-
         //Конфигурация gson
         //Для сериализации обьекта сontact в формат JSON при запросе
         GsonBuilder gsonRequestBuilder = new GsonBuilder();
@@ -135,7 +134,6 @@ public class APIWorker {
          */
 
          return createdContact;
-
     }
 
     /**
